@@ -1,0 +1,22 @@
+<section class="body">
+    <div class="janela">
+        <h1>Login</h1>
+        <h3 *ngIf="mensagem">{{ mensagem }}</h3>
+
+        <form [ngClass]="class_validate" [formGroup]="form_login" (ngSubmit)="logar()">
+            <div class="label_input">
+                <label>CPF:</label>
+                <input type="text" class="form-control" placeholder="cpf" formControlName="cpf" required>
+            </div>
+            <div class="label_input">
+                <label>SENHA:</label>
+                <input type="password" class="form-control" placeholder="senha" formControlName="password" required>
+            </div>
+            <div class="cadastro">
+                <h6>NAO TEM CADASTRO?</h6>
+                <input type="submit" value="cadastrar" (click)="novo_cadastro()">
+            </div>
+            <input type="submit" value="Logar" class="btn">
+        </form>
+    </div>
+</section>

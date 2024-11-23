@@ -1,0 +1,27 @@
+<section class="body">
+    <div class="janela">
+        <h1>CADASTRO PESSOA</h1>
+        <form action="javascript" [ngClass]="class_validate" [formGroup]="form_dados">
+            <div class="form-row">  
+                    <label for="nome">NOME:</label>
+                    <input type="text" class="form-control" id="nome" formControlName="nome" required>
+            </div>
+            <div class="form-row">
+                    <label for="cpf">CPF:</label>
+                    <input type="text" class="form-control" id="cpf" formControlName="cpf" required>
+                </div>
+                <div class="form-row">
+                    <label for="email">EMAIL:</label>
+                    <input type="text" class="form-control" id="email" formControlName="email" required>
+                </div>
+                <div class="form-row">
+                    <label for="senha">SENHA:</label>
+                    <input type="text" class="form-control" id="senha" formControlName="senha" required>
+                </div>
+                <div class="btn">
+                     <button type="submit" class="btn-salvar" (click)="salvar()">Salvar</button> 
+                </div>
+                
+        </form>
+    </div>
+</section>

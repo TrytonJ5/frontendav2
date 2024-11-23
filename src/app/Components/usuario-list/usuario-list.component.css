@@ -1,0 +1,75 @@
+.body{
+    background-color: #BAB8B8;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.janela{
+    width: 60vw;
+    background-color: #004953;
+    min-height: 55vh;
+    color: white;
+    border-radius: 30px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.janela h1{
+    font-family: "Playwrite FR Moderne", cursive;
+    font-size: 25px;
+}
+table{
+    width: 85%;
+}
+.linha_header{
+    display: grid;
+    grid-template-columns: repeat(4,1fr) 2fr;
+    gap: 5px ;
+    margin-top: 15px;
+}
+
+.linha_header th{
+    border-radius: 10px;
+    background-color: #8B4513;
+    padding: 7px 0;
+}
+
+.linha_body{
+    display: grid;
+    grid-template-columns: repeat(4,1fr) 2fr;
+    grid-auto-rows: 35px;
+    margin: 15px 0;
+    align-items: center;
+    justify-items: center;
+    color: black;
+    background-color: white;
+}
+.linha_body .button_container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(238, 237, 237);
+}
+.linha_body .button_container button{
+    padding: 0 5px;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.edit{
+    background-color: #003366;
+}
+.remover{
+    background-color: #800000;
+}
+.promover{
+    background-color: rgb(3, 84, 3);
+}

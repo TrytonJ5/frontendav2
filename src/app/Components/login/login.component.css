@@ -1,0 +1,59 @@
+.body {
+    background-color: #BAB8B8;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.janela {
+    width: 60vw;
+    background-color: #004953;
+    height: 55vh;
+    color: white;
+    border-radius: 30px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.janela h1 {
+    font-family: "Playwrite FR Moderne", cursive;
+    font-size: 25px;
+}
+form{
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.label_input{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    gap: 10px;
+    margin: 10px;
+}
+.label_input label{
+    font-size: 18px;
+}
+.label_input input{
+    padding: 7px;
+    border-radius: 10px;
+}
+.cadastro{
+    width: 80%;
+}
+.btn{
+    width: 35%;
+    height: 25px;
+    border-radius: 7px;
+    border: none;
+    margin-top: 10px;
+    background-color: #8B4513;
+    color: white;
+}
+
