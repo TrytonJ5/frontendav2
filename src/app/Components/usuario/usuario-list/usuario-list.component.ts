@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { Usuario } from '../../Model/usuario.model';
-import { UsuarioService } from '../../Services/usuario.service';
 import { Router } from '@angular/router';
+import { Usuario } from '../../../Model/usuario.model';
+import { UsuarioService } from '../../../Services/usuario.service';
 
 @Component({
   selector: 'app-usuario-list',

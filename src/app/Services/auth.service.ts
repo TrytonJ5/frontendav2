@@ -6,7 +6,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class AuthService {
-  private loginUrl = 'https://backav2.onrender.com/api/v1/usuario/logar';
+  private loginUrl = 'http://127.0.0.1:5000/api/v1/usuario/logar';
   private headers = new HttpHeaders({ 'Content-Type': 'application/json' })
 
   constructor(private http: HttpClient) { }

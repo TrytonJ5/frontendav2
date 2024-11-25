@@ -1,0 +1,42 @@
+.body{
+    background-color: #BAB8B8;
+    height: 80%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Playwrite FR Moderne", cursive;
+}
+.sessao-wrap{
+    display: flex;
+    width: 80%;
+    height: 50%;
+    justify-content: space-between;
+    padding: 15px;
+    gap: 15px
+}
+.sessao{
+    width: 25%;
+    background-color: #004953;
+    height: 100%;
+    border-radius: 25px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+}
+.sessao h3{
+    color: white;
+    font-size: 20px;
+}
+.inscrever{
+    width: 50%;
+    padding: 5px;
+    border: none;
+    background-color: #8B4513;
+    color: white;
+    border-radius: 7px;
+}

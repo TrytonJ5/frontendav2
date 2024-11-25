@@ -10,7 +10,7 @@ import { AuthService } from './auth.service';
 export class UsuarioService {
 
   // constantes de url e header
-  private usuarioUrl = 'https://backav2.onrender.com/ap1/v1/usuario'
+  private usuarioUrl = 'http://127.0.0.1:5000/ap1/v1/usuario'
   private headers = new HttpHeaders({ "Authorization": "" })
 
   constructor(private http: HttpClient, private authService: AuthService) {
@@ -54,11 +54,11 @@ export class UsuarioService {
     });
   }
   //funcao para atualizar usuario retornando um usuario atualizado
-  atualizaUsuario(UsuarioParam: Usuario) {
+  atualizaUsuario(UsuarioParam: Usuario,idUsuario : number) {
     let usuarioJson = {
       "usuario": JSON.stringify(UsuarioParam)
     };
-    this.http.put<any>(`${this.usuarioUrl}`, usuarioJson, { "headers": this.headers }).subscribe({
+    this.http.put<any>(`${this.usuarioUrl}/${idUsuario}`, usuarioJson, { "headers": this.headers }).subscribe({
       next: data => {
         return data;
       },

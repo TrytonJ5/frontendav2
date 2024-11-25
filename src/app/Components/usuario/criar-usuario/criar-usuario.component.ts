@@ -1,9 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Usuario } from '../../Model/usuario.model';
 import { Router } from '@angular/router';
-import { UsuarioService } from '../../Services/usuario.service';
+import { Usuario } from '../../../Model/usuario.model';
+import { UsuarioService } from '../../../Services/usuario.service';
+
 
 @Component({
   selector: 'app-criar-usuario',
@@ -76,7 +77,7 @@ export class CriarUsuarioComponent {
         this.usuario.nome = usuario_digitado.nome;
         this.usuario.email = usuario_digitado.email;
         this.usuario.senha = usuario_digitado.senha;
-        this.usuarioService.atualizaUsuario(this.usuario);
+        this.usuarioService.atualizaUsuario(this.usuario,this.idUsuario);
       } else {
         this.usuarioService.criarUsuario(this.usuario);
       }
