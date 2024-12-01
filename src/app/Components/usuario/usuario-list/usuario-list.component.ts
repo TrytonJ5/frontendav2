@@ -13,14 +13,15 @@ import { UsuarioService } from '../../../Services/usuario.service';
 })
 export class UsuarioListComponent {
   usuarios: Array<Usuario> = [];
+  adminPrint !: string;
 
   constructor(private router: Router, private usuarioService: UsuarioService) { }
 
   ngOnInit(): void {
-    this.atualizaContatos();
+    this.atualizaUsuario();
   }
 
-  atualizaContatos() {
+  atualizaUsuario() {
     this.usuarioService.listarUsuarios().subscribe({
       next: (usuarios) => {
         this.usuarios = usuarios;
@@ -31,16 +32,15 @@ export class UsuarioListComponent {
     });
   }
 
-  editar(id: number) {
-    this.router.navigateByUrl('/contato/edit', { state: { idUsuario: id } });
+  voltar() {
+    this.router.navigateByUrl('');
   }
-
   remover(id: number) {
     this.usuarioService.deletaUsuario(id);
-    this.atualizaContatos();
+    this.atualizaUsuario();
   }
-  promover(id: number){
+  promover(id: number) {
     this.usuarioService.promoverUsuario(id);
-    this.atualizaContatos();
+    this.atualizaUsuario();
   }
 }

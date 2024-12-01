@@ -1,7 +1,28 @@
 <header>
+  <div>
+    <h3 *ngIf="apareceButao == true">{{nomeUsuario}}</h3>
+  </div>
   <div class="centro">
     <h1>AMADEUS</h1>
     <h5>SYSTEMS</h5>
   </div>
+  <div *ngIf="apareceButao == true" class="usuario">
+    <ul>
+      <li><img src="perfil.png" alt="">
+      <ul class="dropdown">
+        <li><button type="submit" (click)="loginOff()">Sair do aplicativo</button></li>
+        <li><button type="submit" class="edit" (click)="editar()">Alterar conta</button></li>
+        <li><button type="submit" class="remover" (click)="remover()">Apagar conta</button></li>
+      </ul>
+      </li>
+    </ul>
+  </div>
+  <div style="display: none;">
+
+    
+    
+    
+  </div>
+
 </header>
 <router-outlet />

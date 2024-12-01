@@ -23,6 +23,7 @@
     font-family: "Playwrite FR Moderne", cursive;
     font-size: 25px;
 }
+
 form{
     display: flex;
     width: 50%;
@@ -57,3 +58,11 @@ form{
     color: white;
 }
 
+.criar{
+    width: 50%;
+    padding: 5px;
+    border: 1px solid transparent;
+    background-color: #8B4513;
+    color: white;
+    border-radius: 7px;
+}

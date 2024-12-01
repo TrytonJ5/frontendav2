@@ -1,0 +1,85 @@
+<section class="body">
+    <div class="janela">
+        <h1>Listar Eventos</h1>
+        <table *ngIf="eventos.length != 0, else semEvento">
+            <thead class="linha_header">
+                <th>Nome</th>
+                <th>Responsavel</th>
+                <th>Data inicio</th>
+                <th>Data Final</th>
+                <th>Limite Inscricoes</th>
+                <th>Ações</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let evento of eventos;" class="linha_body">
+                    <td>{{ evento.nome }}</td>
+                    <td>{{ evento.nome_responsavel }}</td>
+                    <td>{{ evento.dt_inicio }}</td>
+                    <td>{{ evento.dt_fim }}</td>
+                    <td>{{ evento.dt_limite_inscricao }}</td>
+                    <td class="button_container">
+                        <button type="submit" class="edit" (click)="editar(evento.id)">Alterar</button>
+                        <button type="submit" class="remover" (click)="remover(evento.id)">Deletar</button>
+                    </td>
+                </tr>
+                <div class="container-button">
+                    <img src="https://cdn-icons-png.flaticon.com/512/4028/4028647.png" (click)="voltar()"
+                        alt="botao para retornar a pagina principal">
+                </div>
+            </tbody>
+        </table>
+
+        <ng-template #semEvento class="semUsuario">
+            <div class="content">
+                <h1>SEM EVENTOS</h1>
+            </div>
+            <div class="container-button">
+                <img src="https://cdn-icons-png.flaticon.com/512/4028/4028647.png" (click)="voltar()"
+                    alt="botao para retornar a pagina principal">
+            </div>
+        </ng-template>
+    </div>
+</section>
+
+<!-- <section class="body">
+    <div class="janela">
+        <h1>Listar Eventos</h1>
+        <table *ngIf="eventos.length != 0, else semEvento">
+            <thead class="linha_header">
+                <th>Nome</th>
+                <th>Responsavel</th>
+                <th>Data inicio</th>
+                <th>Data Final</th>
+                <th>Limite Inscricoes</th>
+                <th>Ações</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let evento of eventos;" class="linha_body">
+                    <td>{{ evento.nome }}</td>
+                    <td>{{ evento.nome_responsavel }}</td>
+                    <td>{{ evento.dt_inicio }}</td>
+                    <td>{{ evento.dt_fim }}</td>
+                    <td>{{ evento.dt_limite_inscricao }}</td>
+                    <td class="button_container">
+                        <button type="submit" class="inscrever" (click)="Inscrever(evento.id)">Inscrever</button>
+                        <button type="submit" class="desinscrever" (click)="Desinscrever(evento.id)">Desinscrever</button>
+                    </td>
+                </tr>
+                <div class="container-button">
+                    <img src="https://cdn-icons-png.flaticon.com/512/4028/4028647.png" (click)="voltar()"
+                        alt="botao para retornar a pagina principal">
+                </div>
+            </tbody>
+        </table>
+
+        <ng-template #semEvento class="semUsuario">
+            <div class="content">
+                <h1>SEM EVENTOS</h1>
+            </div>
+            <div class="container-button">
+                <img src="https://cdn-icons-png.flaticon.com/512/4028/4028647.png" (click)="voltar()"
+                    alt="botao para retornar a pagina principal">
+            </div>
+        </ng-template>
+    </div>
+</section> -->

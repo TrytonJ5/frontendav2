@@ -4,6 +4,8 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { Router } from '@angular/router';
 import { Usuario } from '../../../Model/usuario.model';
 import { UsuarioService } from '../../../Services/usuario.service';
+import { AuthService } from '../../../Services/auth.service';
+
 
 
 @Component({
@@ -17,39 +19,35 @@ export class CriarUsuarioComponent {
   class_validate = "needs-validation";
   usuario!: Usuario;
   idUsuario!: number;
+  atualiza = false;
 
   form_dados = new FormGroup({
     nome: new FormControl('', Validators.required),
     cpf: new FormControl('', Validators.required),
     email: new FormControl('', Validators.required),
-    senha: new FormControl('', Validators.required)
+    senha: new FormControl('', Validators.required),
   });
 
-  constructor(private router: Router, private usuarioService: UsuarioService) {
-    const state = this.router.getCurrentNavigation()?.extras.state
-    if (state && state['idUsuario']) {
-      const idUsuario = state['idUsuario'];
-      if (idUsuario) {
-        this.idUsuario = idUsuario;
+
+  constructor(private router: Router, private usuarioService: UsuarioService,private AuthService:AuthService) { }
+
+  ngOnInit(){
+    if(this.AuthService.isLoggedIn()){
+      this.usuarioService.buscarPorToken().subscribe({
+      next: (usuario) => {
+        this.idUsuario = usuario.id;
+        this.preencheForm(usuario)
+        this.atualiza = true;
+      },
+      error: (erro) => {
+        console.log(erro);
       }
+    })
+    }else{
+      this.atualiza = false;
     }
+    
   }
-
-  ngOninit(): void {
-    if (this.idUsuario) {
-      this.usuarioService.buscarUsuario(this.idUsuario).subscribe({
-        next: (usuario) => {
-          if (usuario.nome) {
-            this.usuario = usuario;
-            this.preencheForm(usuario);
-          }
-        }, error: (erro) => {
-          console.log(erro)
-        }
-      })
-    }
-  }
-
   get f_dados() { return this.form_dados.controls; }
 
   preencheForm(usuario: Usuario) {
@@ -71,18 +69,23 @@ export class CriarUsuarioComponent {
 
   salvar() {
     if (this.valida_campos_dados()) {
-      let usuario_digitado = Object.assign(this.form_dados.value)
-      if (this.idUsuario) {
-        this.usuario.cpf = usuario_digitado.cpf;
-        this.usuario.nome = usuario_digitado.nome;
-        this.usuario.email = usuario_digitado.email;
-        this.usuario.senha = usuario_digitado.senha;
-        this.usuarioService.atualizaUsuario(this.usuario,this.idUsuario);
+      let usuario = {
+        "nome": this.form_dados.get('nome')?.value, 
+        "cpf": this.form_dados.get('cpf')?.value,
+        "email": this.form_dados.get('email')?.value,
+        "senha": this.form_dados.get('senha')?.value
+      };
+      if (this.atualiza) {
+        this.usuarioService.atualizaUsuario(usuario, this.idUsuario);
       } else {
-        this.usuarioService.criarUsuario(this.usuario);
+        this.usuarioService.criarUsuario(usuario);
       }
-      //TODO trocar para pagina home
-      this.router.navigateByUrl('/contato/list');
+
+      this.router.navigateByUrl('');
     }
+  }
+
+  voltar() {
+    this.router.navigateByUrl('');
   }
 }

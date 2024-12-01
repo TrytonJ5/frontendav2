@@ -1,4 +1,4 @@
-.body{
+.body {
     background-color: #BAB8B8;
     height: 80%;
     display: flex;
@@ -6,10 +6,10 @@
     align-items: center;
 }
 
-.janela{
-    width: 60vw;
+.janela {
+    width: 75vw;
     background-color: #004953;
-    min-height: 55vh;
+    height: 75vh;
     color: white;
     border-radius: 30px;
     border: 1px solid black;
@@ -17,30 +17,34 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    gap: 10px;
 }
-.janela h1{
+
+.janela h1 {
     font-family: "Playwrite FR Moderne", cursive;
     font-size: 25px;
 }
-table{
+
+table {
     width: 85%;
 }
-.linha_header{
+
+.linha_header {
     display: grid;
-    grid-template-columns: repeat(4,1fr) 2fr;
-    gap: 5px ;
+    grid-template-columns: repeat(5, 1fr) 2fr;
+    gap: 5px;
     margin-top: 15px;
 }
 
-.linha_header th{
+.linha_header th {
     border-radius: 10px;
-    background-color: #8B4513; 
+    background-color: #8B4513;
     padding: 7px 0;
 }
 
-.linha_body{
+.linha_body {
     display: grid;
-    grid-template-columns: repeat(4,1fr) 2fr;
+    grid-template-columns: repeat(5, 1fr) 2fr;
     grid-auto-rows: 35px;
     margin: 15px 0;
     align-items: center;
@@ -48,15 +52,25 @@ table{
     color: black;
     background-color: white;
 }
-.linha_body .button_container{
+
+.linha_body .button_container {
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: space-around;
     background-color: rgb(238, 237, 237);
 }
-.linha_body .button_container button{
-    padding: 0 5px;
+
+.linha_body .button_container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(238, 237, 237);
+}
+
+.linha_body .button_container button {
+    padding: 0 15px;
     color: white;
     border: none;
     border-radius: 7px;
@@ -64,17 +78,22 @@ table{
     cursor: pointer;
 }
 
-.edit{
+.edit {
     background-color: #003366;
 }
-.remover{
+
+.remover {
     background-color: #800000;
 }
-.promover{
-    background-color: rgb(3, 84, 3);
+.inscrever {
+    background-color: darkgoldenrod;
 }
 
-.container-button img{
+.desinscrever {
+    background-color: firebrick;
+}
+
+.container-button img {
     -moz-transform: scaleX(-1);
     -o-transform: scaleX(-1);
     -webkit-transform: scaleX(-1);

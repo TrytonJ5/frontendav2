@@ -1,0 +1,66 @@
+.body{
+    background-color: #BAB8B8;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.janela{
+    width: 60vw;
+    background-color: #004953;
+    height: 75vh;
+    color: white;
+    border-radius: 30px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+.form-grid{
+    display:  grid;
+    grid-template-columns: repeat(2,1fr);
+    column-gap: 50px;
+}
+.form-row,.formata-centro{
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    margin: 10px;
+}
+.form-row input{
+    height: 30px;
+    border: none;
+    border-radius: 7px;
+    padding-left: 7px;
+}
+/* tirar as flechas do input type number */
+.form-row input[type="number"]::-webkit-outer-spin-button,.form-row input[type="number"]::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+}
+.formata-centro{
+    align-items: center;
+}
+.formata-centro textarea{
+    width: 75%;
+    height: 50px;
+    resize: none;
+    border: none;
+    padding: 3px 7px;
+}
+.formata-centro button{
+    padding: 5px 20px;
+    background-color: #8B4513;
+    border: none;
+    color: white;
+}
+.container-button img{
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    width: 30px;
+    cursor: pointer;
+}

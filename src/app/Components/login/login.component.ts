@@ -20,7 +20,8 @@ export class LoginComponent {
     password: new FormControl('', Validators.required)
   });
 
-  constructor(private router: Router, private authService: AuthService) { }
+  constructor(private router: Router, private authService: AuthService) {
+  }
 
   valida_campos_dados(): boolean {
     if (this.form_login.invalid) {
@@ -35,30 +36,28 @@ export class LoginComponent {
   logar() {
     if (this.valida_campos_dados()) {
       let user = {
-        "cpf": this.form_login.get('cpf')?.value, "password":this.form_login.get('password')?.value
+        "cpf": this.form_login.get('cpf')?.value, 
+        "password": this.form_login.get('password')?.value
       };
       if (!this.authService.isLoggedIn()) {
         this.authService.login(user).subscribe({
           next: token => {
             if (token) {
-              this.authService.setToken(token['token']);
-              this.router.navigateByUrl('/usuario/listar');
+              this.authService.setToken(token['token_jwt']);
+              this.router.navigateByUrl('');
             }
           },
           error: error => {
-            console.error('Houve um erro:', error);
-            console.log(error.error.message);
-            this.mensagem = error.error.message;
+            this.mensagem = error.error.msg;
           }
         });
       } else {
-        this.router.navigateByUrl('usuario/listar');
+        this.router.navigateByUrl('');
       }
     }
   }
 
-  novo_cadastro(){
-    // TODO implementar o novo cadastro
-    console.log("aaaaa");
+  novo_cadastro() {
+    this.router.navigateByUrl('usuario/criar')
   }
 }

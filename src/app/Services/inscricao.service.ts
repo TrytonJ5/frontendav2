@@ -35,15 +35,6 @@ export class EventoService {
     );
   }
 
-  // ok
-  listagemInscritosPalestra(id_palestra: number): Observable<any[]> {
-    return this.http.get<any[]>(`${this.inscricaoUrl}/palestra/${id_palestra}`, { "headers": this.headers }).pipe(
-      map(listagemInscritosPalestra => {
-        return listagemInscritosPalestra;
-      })
-    );
-  }
-
   // inscricao post
   // ok
   inscreverEvento(id_evento: number, id_usuario: number) {
@@ -77,24 +68,8 @@ export class EventoService {
     })
   }
 
-  // ok
-  inscreverPalestra(id_palestra: number,id_usuario: number) {
-    let palestraUsuario = {
-      "id_minicurso": id_palestra,
-      "id_usuario_participante": id_usuario
-    }
-    return this.http.post<any[]>(`${this.inscricaoUrl}/palestra`, palestraUsuario, { "headers": this.headers }).subscribe({
-      next: data => {
-        return data;
-      },
-      error: error => {
-        console.error('Houve um erro:', error);
-      }
-    })
-  }
-
+  
   // inscricao delete
-
   // ok
   removerInscricaoEvento(id_evento:number,id_Usuario:number){
     this.http.delete<any>(`${this.inscricaoUrl}/evento/${id_evento}/${id_Usuario}`, { "headers": this.headers }).subscribe({
@@ -110,18 +85,6 @@ export class EventoService {
   // ok
   removerInscricaoMinicurso(id_minicurso:number,id_Usuario:number){
     this.http.delete<any>(`${this.inscricaoUrl}/minicurso/${id_minicurso}/${id_Usuario}`, { "headers": this.headers }).subscribe({
-      next: data => {
-        return data;
-      },
-      error: error => {
-        console.error('Houve um erro: ', error);
-      }
-    });
-  }
-
-  // ok
-  removerInscricaoPalestra(id_palestra:number,id_Usuario:number){
-    this.http.delete<any>(`${this.inscricaoUrl}/palestra/${id_palestra}/${id_Usuario}`, { "headers": this.headers }).subscribe({
       next: data => {
         return data;
       },

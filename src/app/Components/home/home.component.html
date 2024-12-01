@@ -1,4 +1,4 @@
-<section class="body">
+<section class="body" *ngIf="usuarioAtual == false">
     <h3>PAGINA USUARIO</h3>
     <div class="sessao-wrap" >
         <div class="sessao">
@@ -16,25 +16,28 @@
     </div>
 
 </section>
-<!-- <section class="body">
+<section class="body" *ngIf="usuarioAtual == true">
     <h3>PAGINA ADMINISTRACAO</h3>
     <div class="sessao-wrap" >
         <div class="sessao">
             <h3>MINICURSO</h3>
-            <button type="submit" class="inscrever" (click)="listarMinicurso()">minicurso adm</button>
+            <button type="submit" class="criar btn" (click)="criarMinicurso()">Criação</button>
+            <button type="submit" class="inscrever btn" (click)="listarMinicurso()">Listagem</button>
         </div>
         <div class="sessao">
             <h3>PALESTRA</h3>
-            <button type="submit" class="inscrever" (click)="listarPalestra()">palestras adm</button>
+            <button type="submit" class="criar btn" (click)="criarPalestra()">Criação</button>
+            <button type="submit" class="inscrever btn" (click)="listarPalestra()">Listagem</button>
         </div>
         <div class="sessao">
             <h3>EVENTO</h3>
-            <button type="submit" class="inscrever" (click)="listarEvento()">eventos adm</button>
+            <button type="submit" class="criar btn" (click)="criarEvento()">Criação</button>
+            <button type="submit" class="inscrever btn" (click)="listarEvento()">Listagem</button>
         </div>
         <div class="sessao">
             <h3>USUARIO</h3>
-            <button type="submit" class="inscrever" (click)="listarUsuario()">usuarios adm</button>
+            <button type="submit" class="inscrever btn" (click)="listarUsuario()">Listagem</button>
         </div>
     </div>
 
-</section> -->
+</section>

@@ -12,7 +12,7 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   login(userParam: { cpf: any; password: string | null | undefined; }): Observable<any> {
-    return this.http.post<any>(`${this.loginUrl}`,JSON.stringify({ "cpf": userParam.cpf, "password": userParam.password }), {"headers":this.headers}).pipe(
+    return this.http.post<any>(`${this.loginUrl}`,JSON.stringify({ "cpf": userParam.cpf, "senha": userParam.password }), {"headers":this.headers}).pipe(
       map(data => {
         return data;
       })
