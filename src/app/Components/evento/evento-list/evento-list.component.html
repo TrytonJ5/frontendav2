@@ -1,4 +1,4 @@
-<section class="body">
+<section class="body" *ngIf="usuarioAtual == true">
     <div class="janela">
         <h1>Listar Eventos</h1>
         <table *ngIf="eventos.length != 0, else semEvento">
@@ -18,17 +18,18 @@
                     <td>{{ evento.dt_fim }}</td>
                     <td>{{ evento.dt_limite_inscricao }}</td>
                     <td class="button_container">
+                        <button type="submit" class="inscricao" (click)="listarInscricao(evento.id)">Inscrições</button>
                         <button type="submit" class="edit" (click)="editar(evento.id)">Alterar</button>
                         <button type="submit" class="remover" (click)="remover(evento.id)">Deletar</button>
                     </td>
                 </tr>
-                <div class="container-button">
-                    <img src="https://cdn-icons-png.flaticon.com/512/4028/4028647.png" (click)="voltar()"
-                        alt="botao para retornar a pagina principal">
-                </div>
+
             </tbody>
         </table>
-
+        <div class="container-button">
+            <img src="https://cdn-icons-png.flaticon.com/512/4028/4028647.png" (click)="voltar()"
+                alt="botao para retornar a pagina principal">
+        </div>
         <ng-template #semEvento class="semUsuario">
             <div class="content">
                 <h1>SEM EVENTOS</h1>
@@ -41,7 +42,7 @@
     </div>
 </section>
 
-<!-- <section class="body">
+<section class="body" *ngIf="usuarioAtual == false">
     <div class="janela">
         <h1>Listar Eventos</h1>
         <table *ngIf="eventos.length != 0, else semEvento">
@@ -62,15 +63,15 @@
                     <td>{{ evento.dt_limite_inscricao }}</td>
                     <td class="button_container">
                         <button type="submit" class="inscrever" (click)="Inscrever(evento.id)">Inscrever</button>
-                        <button type="submit" class="desinscrever" (click)="Desinscrever(evento.id)">Desinscrever</button>
+                        <button type="submit" class="Detalhar" (click)="Detalhar(evento.id)">Detalhes</button>
                     </td>
                 </tr>
-                <div class="container-button">
-                    <img src="https://cdn-icons-png.flaticon.com/512/4028/4028647.png" (click)="voltar()"
-                        alt="botao para retornar a pagina principal">
-                </div>
             </tbody>
         </table>
+        <div class="container-button">
+            <img src="https://cdn-icons-png.flaticon.com/512/4028/4028647.png" (click)="voltar()"
+                alt="botao para retornar a pagina principal">
+        </div>
 
         <ng-template #semEvento class="semUsuario">
             <div class="content">
@@ -82,4 +83,4 @@
             </div>
         </ng-template>
     </div>
-</section> -->
+</section>

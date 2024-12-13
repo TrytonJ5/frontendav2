@@ -1,0 +1,30 @@
+<section class="body">
+    <div class="janela">
+        <h1>Detalhar {{nome_evento}}</h1>
+        <table class="minicurso" *ngIf="eventos.length != 0, else semEvento">
+                <thead class="linha_header">
+                    <th>Nome</th>
+                    <th>Responsavel</th>
+                    <th>Data inicio</th>
+                    <th>Data Final</th>
+                    <th>Limite Inscricoes</th>
+                    <th>Ações</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let evento of eventos;" class="linha_body">
+                        <td>{{ evento.nome }}</td>
+                        <td>{{ evento.descricao }}</td>
+                        <td>{{ evento.dt_inicio }}</td>
+                        <td>{{ evento.dt_fim }}</td>
+                        <td>{{ evento.dt_limite_inscricao }}</td>
+                    </tr>
+                </tbody>
+        </table>
+        <table class="palestras">
+
+        </table>
+        <div class="container-button">
+            <img src="https://cdn-icons-png.flaticon.com/512/4028/4028647.png" (click)="voltar()"alt="botao para retornar a pagina principal">
+        </div>
+    </div>
+</section>

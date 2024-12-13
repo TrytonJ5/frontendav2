@@ -6,7 +6,7 @@ import { AuthService } from './auth.service';
 @Injectable({
   providedIn: 'root'
 })
-export class EventoService {
+export class inscricaoService {
 
   // constantes de url e header
   private inscricaoUrl = 'http://127.0.0.1:5000/api/v1/inscricao'

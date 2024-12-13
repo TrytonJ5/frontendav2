@@ -6,8 +6,6 @@ import { Usuario } from '../../../Model/usuario.model';
 import { UsuarioService } from '../../../Services/usuario.service';
 import { AuthService } from '../../../Services/auth.service';
 
-
-
 @Component({
   selector: 'app-criar-usuario',
   standalone: true,

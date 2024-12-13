@@ -1,0 +1,29 @@
+.body{
+    background-color: #BAB8B8;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.janela{
+    width: 60vw;
+    background-color: #004953;
+    height: 75vh;
+    color: white;
+    border-radius: 30px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+.container-button img{
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    width: 30px;
+    cursor: pointer;
+}
